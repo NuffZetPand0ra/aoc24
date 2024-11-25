@@ -1,0 +1,15 @@
+{
+    "name": "nuffy/aoc21",
+    "description": "Advent of Code in PHP",
+    "type": "playground",
+    "authors": [
+        {
+            "name": "Esben Tind",
+            "email": "esbentind@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "ulrichsg/getopt-php": "^4.0"
+    }
+}
