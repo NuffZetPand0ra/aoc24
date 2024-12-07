@@ -8,7 +8,7 @@ function solve1($input) : int
     list($rules, $manuals) = parse_input($input);
 
     foreach($manuals as $manual) {
-        if(valid_manual($rules, $manual)) {
+        if(is_valid_manual($rules, $manual)) {
             $middle_page = $manual[floor(count($manual) / 2)];
             $return += $middle_page;
         }
@@ -23,7 +23,7 @@ function solve2($input) : int
     list($rules, $manuals) = parse_input($input);
 
     foreach($manuals as $manual) {
-        if(!valid_manual($rules, $manual)) {
+        if(!is_valid_manual($rules, $manual)) {
             usort($manual, function($a, $b) use ($rules) {
                 if(isset($rules[$a]) && in_array($b, $rules[$a])) {
                    return -1;
@@ -63,7 +63,7 @@ function parse_input(string $input) : array
     return [$rules, $manuals];
 }
 
-function valid_manual($rules, $manual) : bool
+function is_valid_manual($rules, $manual) : bool
 {
     foreach($manual as $pos => $page_number) {
         if(isset($rules[$page_number])) {
